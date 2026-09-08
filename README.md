@@ -1,97 +1,291 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+📦 Local Warehouse App
 
-# Getting Started
+Local Warehouse App is a React Native-based warehouse management system designed to simplify and centralize daily warehouse operations.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+The application provides a single platform for managing products, inventory, suppliers, customers, purchase orders, sales orders, and operational reports. It helps warehouse users maintain accurate stock information, manage purchasing and sales activities, and keep track of day-to-day inventory operations.
 
-## Step 1: Start Metro
+The project focuses on building a practical warehouse workflow that connects inventory, purchasing, suppliers, customers, and sales into one centralized system.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+🎯 Why This Project?
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Managing warehouse operations manually can make it difficult to maintain accurate inventory levels, track purchases and sales, and keep supplier and customer information organized.
 
-```sh
-# Using npm
+The Local Warehouse App addresses this by providing a centralized system where users can manage warehouse data and monitor stock movement from a single application.
+
+The project demonstrates how a mobile application can combine CRUD operations, inventory management, order processing, supplier and customer management, and reporting into one complete business-management solution.
+
+✨ Features
+
+* 📦 Product management
+* ➕ Add new products
+* ✏️ Update product information
+* 🗑️ Delete products
+* 🔢 Track inventory and stock levels
+* 🔄 Manage stock movement
+* 🚚 Supplier management
+* 👥 Customer management
+* 🛒 Purchase order management
+* 🧾 Sales order management
+* 📊 Warehouse reports
+* 🔍 Search and manage warehouse records
+* 📱 Responsive React Native UI
+* 🔐 User authentication
+* ⚡ Centralized warehouse management
+
+🔄 Warehouse Workflow
+
+Add Products
+     ↓
+Manage Inventory
+     ↓
+Purchase Stock
+     ↓
+Receive Stock
+     ↓
+Update Inventory
+     ↓
+Process Sales
+     ↓
+Reduce Stock
+     ↓
+Generate Reports
+
+Purchase Workflow
+
+Create Purchase Order
+        ↓
+Select Supplier
+        ↓
+Add Products & Quantity
+        ↓
+Confirm Purchase
+        ↓
+Receive Stock
+        ↓
+Update Inventory
+
+Sales Workflow
+
+Create Sales Order
+        ↓
+Select Customer
+        ↓
+Add Products & Quantity
+        ↓
+Confirm Sale
+        ↓
+Reduce Inventory
+        ↓
+Complete Order
+
+🧩 Main Modules
+
+📦 Product Management
+
+Users can manage warehouse products through complete CRUD operations:
+
+Create → Read → Update → Delete
+
+Product information can include:
+
+* Product name
+* SKU / product code
+* Category
+* Price
+* Quantity
+* Stock status
+* Product description
+
+🔢 Inventory Management
+
+The inventory module provides a centralized view of available stock.
+
+Users can monitor:
+
+* Current stock
+* Stock additions
+* Stock reductions
+* Available quantity
+* Low-stock items
+* Product availability
+
+Inventory changes can be associated with purchasing and sales operations.
+
+🚚 Supplier Management
+
+Users can maintain supplier information and associate suppliers with purchase orders.
+
+Supplier records can contain:
+
+* Supplier name
+* Contact information
+* Email
+* Phone number
+* Address
+* Additional details
+
+👥 Customer Management
+
+The customer module allows users to maintain customer information and associate customers with sales orders.
+
+🛒 Purchase Orders
+
+Purchase orders allow warehouse users to record incoming stock from suppliers.
+
+Users can:
+
+* Create purchase orders
+* Select suppliers
+* Add products
+* Specify quantities
+* Track purchase status
+* Update inventory after receiving stock
+
+🧾 Sales Orders
+
+Sales orders help manage outgoing inventory and customer purchases.
+
+Users can:
+
+* Create sales orders
+* Select customers
+* Add products
+* Specify quantities
+* Track order status
+* Update inventory after sales
+
+📊 Reports
+
+The reporting module provides an overview of warehouse operations and helps users understand important business information such as inventory, purchases, and sales.
+
+🏗️ Application Architecture
+
+The application follows a structured architecture that separates the mobile interface, application logic, API communication, and backend data management.
+
+React Native UI
+       ↓
+Screens / Components
+       ↓
+Services / API Layer
+       ↓
+Node.js & Express.js
+       ↓
+MongoDB
+
+This separation keeps the application modular and makes individual warehouse modules easier to maintain and manage.
+
+🛠️ Tech Stack
+
+React Native • JavaScript • React Hooks • Axios • AsyncStorage • Node.js • Express.js • MongoDB • Mongoose • JWT • bcryptjs
+
+📁 Project Structure
+
+LocalWarehouse/
+ → src/ • screens/ • components/ • services/ • navigation/ • models/ • utils/
+ → assets/ • android/ • ios/ • package.json • README.md
+
+🚀 Getting Started
+
+Prerequisites
+
+Make sure you have the following installed:
+
+* Node.js
+* npm
+* React Native development environment
+* Android Studio / Xcode
+* Android Emulator or physical device
+* MongoDB
+* Backend server
+
+Installation
+
+Clone the repository:
+
+git clone <your-repository-url>
+
+Navigate to the project:
+
+cd LocalWarehouse
+
+Install dependencies:
+
+npm install
+
+Start the Metro server:
+
 npm start
 
-# OR using Yarn
-yarn start
-```
+Run the Android application:
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
 npm run android
 
-# OR using Yarn
-yarn android
-```
+For iOS:
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
 npm run ios
 
-# OR using Yarn
-yarn ios
-```
+🔌 Backend Configuration
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+The application communicates with a Node.js and Express.js backend.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Configure the API base URL according to your development environment.
 
-## Step 3: Modify your app
+For an Android emulator, a backend running on the development machine can typically be accessed using:
 
-Now that you have successfully run the app, let's make changes!
+http://10.0.2.2:<PORT>
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+For a physical Android device, use the local IP address of the machine running the backend.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+🔒 Authentication & Security
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+The application uses token-based authentication to protect user-specific operations.
 
-## Congratulations! :tada:
+JWT can be used to:
 
-You've successfully run and modified your React Native App. :partying_face:
+* Authenticate users
+* Protect API endpoints
+* Identify the logged-in user
+* Restrict access to warehouse operations
+* Secure product, inventory, supplier, customer, and order data
 
-### Now what?
+Passwords are securely hashed on the backend rather than being stored as plain text.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+💡 Real-World Use Case
 
-# Troubleshooting
+A local warehouse receives a new shipment of products from a supplier.
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+The warehouse user can:
 
-# Learn More
+1. Select the supplier.
+2. Create a purchase order.
+3. Add the incoming products and quantities.
+4. Confirm the purchase.
+5. Receive the stock.
+6. Update the inventory.
+7. Process customer sales.
+8. Automatically reflect outgoing stock.
+9. Review warehouse reports.
 
-To learn more about React Native, take a look at the following resources:
+This creates a complete supplier → purchase → inventory → sales → customer workflow.
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+🎯 Project Goals
+
+The main goals of this project are:
+
+* Build a practical warehouse management application.
+* Centralize daily warehouse operations.
+* Implement product and inventory CRUD functionality.
+* Manage suppliers and customers.
+* Implement purchase and sales order workflows.
+* Track stock movement.
+* Generate operational reports.
+* Develop secure user authentication.
+* Integrate a React Native application with a backend API.
+* Work with MongoDB for persistent business data.
+* Build a complete real-world business application for a development portfolio.
+
+📌 Portfolio Highlights
+
+This project demonstrates practical experience with:
+
+React Native • JavaScript • Mobile UI Development • Authentication • CRUD Operations • REST APIs • Axios • AsyncStorage • Node.js • Express.js • MongoDB • Mongoose • JWT • bcryptjs • Inventory Management • Product Management • Supplier Management • Customer Management • Purchase Orders • Sales Orders • Business Reports
